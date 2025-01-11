@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A.U.R.A. Login</title>
+  <style>
+    body {
+      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+      background-color: #f4f4f4;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+    }
+    .login-container {
+      max-width: 400px;
+      margin: 100px auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      margin-bottom: 20px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    button {
+      background-color: #4c74af;
+      color: white;
+      padding: 10px 20px;
+      font-size: 18px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color:#4c74af;
+    }
+    .error-message {
+      color: red;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="login-container">
+    <h1>A.U.R.A. Login</h1>
+    <p>Enter the password to access the website</p>
+    <input type="password" id="password" placeholder="Enter Password" required>
+    <button onclick="validatePassword()">Login</button>
+    <p id="error-message" class="error-message"></p>
+  </div>
+
+  <script>
+    function validatePassword() {
+      const password = document.getElementById("password").value;
+      const correctPassword = "AURA2025"; // Replace with your desired password
+
+      if (password === correctPassword) {
+        // Redirect to the main website
+        window.location.href = "index.html";
+      } else {
+        // Show an error message
+        document.getElementById("error-message").textContent = "Incorrect password. Please try again.";
+      }
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download AURA files</title>
+    <STYLE>main {
+        padding: 20px;
+        margin: 10px auto;
+        width: 90%;
+        max-width: 400px;
+        background: white;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        text-align: center;
+      }
+      header {
+      background-color: #4c74af;
+      color: rgb(0, 0, 0);
+      text-align: center;
+      padding: 20px;
+    }
+    div{
+        text-align: center;
+    }
+    body{
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    }
+      </STYLE>
+</head>
+<body>
+    <header>
+        <main>
+            <fieldset>
+                <h2>Download files here</h2>
+            </fieldset>
+            
+        </main>
+    </header>
+    <br>
+    <br><br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div>
+        
+        <br>
+        <a href="c:\Users\aaron\OneDrive\Documents\Founding_Members_AURA_Updated_Certificate.pdf" download>Download certificate of establishing.pdf</a>
+    </div>
+    <div id="file-list"></div>
+    <footer>
+        <p>&copy; 2025 A.U.R.A. All Rights Reserved.</p>
+        <a href="index.html">Go Back to Home</a>
+      </footer>
+      <script>
+        const express = require('express');
+        const multer = require('multer');
+        const path = require('path')
+        const app = express();
+        //Configure multer for file uploads
+        const storage = multer.diskStorge({
+            destination: './uploads/.',
+            filename: (req, file, cb) => {
+                cb(null, Date.now() + path.extname(file.originalname));
+            }
+            });
+            const upload =  multer({ storage });
+        // Endpoint to handle file upload
+        app.post('/upload',
+        upload.single('file'), (req, res) => {
+
+            res.send('File uploaded succesfully');
+        
+
+        app.listen(3000, () => {
+            console.log( 'Server is running on port 3000')
+        })
+        app.use('/downloads', express.static(path.join(__dirname, 'uploads')))
+
+        const fs = require('fs');
+
+app.get('/files', (req, res) => {
+    fs.readdir('./uploads/', (err, files) => {
+        if (err) {
+            res.status(500).send('Unable to fetch files');
+        } else {
+            res.json(files);
+        }
+    });
+});    
+fetch('/files')
+        .then(response => response.json())
+        .then(files => {
+            const list = document.getElementById('file-list');
+            files.forEach(file => {
+                const link = document.createElement('a');
+                link.href = `/downloads/${file}`;
+                link.textContent = file;
+                link.download = file;
+                list.appendChild(link);
+                list.appendChild(document.createElement('br'));
+            });
+        });
+        })
+      </script>
+</body>
+</html>
