@@ -15,23 +15,35 @@
       font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
       margin: 0;
       padding: 0;
-      background-image: url("C:\Users\aaron\OneDrive\Pictures\IMG_20250108_093920.jpg");
+      background-image: url("./AURA.jpg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-color: gray;
       color: #333;
     }
     header {
-      background-color: #4c74af;
+      background-color: #0065fd;
       color: white;
       text-align: center;
       padding: 20px;
+      background: transparent;
+      backdrop-filter: blur(10px);
+      border: 1px solid gray;
     }
     section {
       padding: 20px;
-      margin: 10px auto;
-      width: 90%;
+      margin: 100px auto;
+      width: 80%;
       max-width: 800px;
       background: white;
       border-radius: 5px;
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      background: transparent;
+      backdrop-filter: blur(10px);
+      border: 1px solid gray;
+      color: #ffff;
+      
     }
     footer {
       text-align: center;
@@ -39,10 +51,16 @@
       color: white;
       padding: 10px;
       position: relative;
+      background: transparent;
+      backdrop-filter: blur(10px);
+      border: 1px solid gray;
     }
     h1, h2 {
       margin-top: 0;
     }
+    a{
+            color: #ffff;
+        }
     button {
       padding: 10px 15px;
       font-size: 14px;
@@ -54,6 +72,64 @@
     }
     button:hover {
       background-color: #4c74af;
+    }
+    button {
+      background-color: var(--btn-color);
+      color: white;
+      padding: 10px 20px;
+      font-size: 18px;
+      border: none;
+      border-radius: 1em;
+      cursor: pointer;
+      border-color: yellowgreen;
+      border-width: 10px;
+      lighting-color: yellowgreen;
+      text-align: justify;
+    }
+    button{
+      --glow-color: rgb(123, 121, 245);
+      --glow-spread-color: rgba(123, 180, 255, 0.781);
+      --enhanced-glow-color: rgb(206, 229, 255);
+      --btn-color: rgb(0, 110, 255);
+      border: 0.25em solid var(--glow-color);
+      padding: 15px;
+      color: var(--glow-color);
+      font-weight: 1em 3em;
+      outline: none;
+      box-shadow: 0 0  1em 0.25 var(--glow-color),
+        0 0 4em 1em var(--glow-spread-color),
+        inset 0 0 0.75em 0.25 var(--glow-color);
+      text-shadow: 0 0 0.5em var(--glow-color);
+      position: relative;
+      transition: all 0.3s;
+      
+    }
+    button-after {
+      pointer-events: none;
+      content: "";
+      position: absolute;
+      top: 120%;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background-color: var(--enhanced-glow-color);
+      filter: blur(2em);
+      opacity: 0.7;
+      transform: perspective(1.5em) rotateX('35deg') scale(1, 0.6);
+    }
+    button:hover {
+      background-color: var(--glow-color);
+      box-shadow: 0 0 1em 0.25em var(--glow-color),
+        0 0 4em 2em var(--glow-spread-color),
+        inset 0 0 0.75em 0.25 var(--glow-color);
+
+
+    }
+    button:active{
+      box-shadow: 0 0 0.6em 0.25em var(--glow-color),
+         0 0 2.5em 2em var(--glow-color),
+         inset 0 0 0 .5em 0.25em var(--glow-color)
+
     }
     a {
       color: #4c74af;
@@ -142,6 +218,14 @@
     <h2>Contact Us</h2>
     <p>If you'd like to reach out to A.U.R.A., email us at <a href="mailto:auraconnect025@gmail.com">auraconnect025@gmail.com</a>.</p>
   </section>
+
+  <!-- Channel Section-->
+   <section id="Youtube Channel">
+    <h2>Youtube Updates</h2>
+    <p>We also have a YouTube Channel, Click to support</p>
+    <a href="https://www.youtube.com/@auraofficial-s69" target="_blank"></a>
+    <button>Subscribe</button>
+   </section>
   <div>
     <a href="index.html">Lock the Website</a>
   </div>

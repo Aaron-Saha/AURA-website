@@ -19,21 +19,91 @@
       color: rgb(0, 0, 0);
       text-align: center;
       padding: 20px;
+      background: transparent;
+      backdrop-filter: blur(10px);
+      border: 1px solid gray;
     }
     div{
         text-align: center;
     }
+    a{
+            color: #ffff;
+        }
     body{
         font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        background-image: url("./AURA.jpg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-color: gray;
     }
+    button {
+      background-color: var(--btn-color);
+      color: white;
+      padding: 10px 20px;
+      font-size: 18px;
+      border: none;
+      border-radius: 1em;
+      cursor: pointer;
+      border-color: yellowgreen;
+      border-width: 10px;
+      lighting-color: yellowgreen;
+      text-align: justify;
+    }
+    button{
+      --glow-color: rgb(217, 176, 255);
+      --glow-spread-color: rgba(191, 123, 255, 0.781);
+      --enhanced-glow-color: rgb(231, 206, 255);
+      --btn-color: rgb(100, 61, 136);
+      border: 0.25em solid var(--glow-color);
+      padding: 15px;
+      color: var(--glow-color);
+      font-weight: 1em 3em;
+      outline: none;
+      box-shadow: 0 0  1em 0.25 var(--glow-color),
+        0 0 4em 1em var(--glow-spread-color),
+        inset 0 0 0.75em 0.25 var(--glow-color);
+      text-shadow: 0 0 0.5em var(--glow-color);
+      position: relative;
+      transition: all 0.3s;
+      
+    }
+    button-after {
+      pointer-events: none;
+      content: "";
+      position: absolute;
+      top: 120%;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background-color: var(--glow-spread-color);
+      filter: blur(2em);
+      opacity: 0.7;
+      transform: perspective(1.5em) rotateX('35deg') scale(1, 0.6);
+    }
+    button:hover {
+      background-color: var(--glow-color);
+      box-shadow: 0 0 1em 0.25em var(--glow-color),
+        0 0 4em 2em var(--glow-spread-color),
+        inset 0 0 0.75em 0.25 var(--glow-color);
+
+
+    }
+    button:active{
+      box-shadow: 0 0 0.6em 0.25em var(--glow-color),
+         0 0 2.5em 2em var(--glow-spread-color),
+         inset 0 0 0 .5em 0.25em var(--glow-color)
+
+    }
+
       </STYLE>
 </head>
 <body>
     <header>
         <main>
-            <fieldset>
+            
                 <h2>Download files here</h2>
-            </fieldset>
+            
             
         </main>
     </header>
