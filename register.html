@@ -3,66 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register</title>
+    <title>Register - A.U.R.A.</title>
+    <link rel="icon" href="./AURA-icon.png" type="image/x-icon">
     <style>
-        header{
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
+        
+        body {
+            font-family: 'Orbitron', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url("./cyberpunk-bg.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            color: #0ff;
+            text-shadow: 0 0 10px #0ff;
+        }
+        header, footer {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 20px;
             text-align: center;
-            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif ;
-            background: transparent;
-      backdrop-filter: blur(10px);
-      border: 1px solid gray;
+            border-bottom: 3px solid #0ff;
         }
-        a{
-            color: #ffff;
-        }
-        footer{
-            
-            size: 110px;
-            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif ;
+        main {
             text-align: center;
-            background: transparent;
-      backdrop-filter: blur(10px);
-      border: 1px solid gray;
+            margin: 50px auto;
+            padding: 20px;
+            width: 80%;
+            max-width: 600px;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+            box-shadow: 0 0 20px #0ff;
         }
-        main{
-            height: 400px;
-            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif ;
-            text-align: center;
+        a {
+            color: #0ff;
+            text-decoration: none;
+            transition: color 0.3s;
         }
-        div{
-            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif ;
-            text-align: center;
+        a:hover {
+            color: #ff0;
+            text-shadow: 0 0 10px #ff0;
         }
-        body{
-            background-image: url("./AURA.jpg");
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-position: center;
-      background-color: gray;
-      color: #ffff;
-      background: transparent;
-      backdrop-filter: blur(10px);
-      border: 1px solid gray;
+        .contact-info {
+            font-size: 18px;
+            line-height: 1.8;
         }
     </style>
 </head>
 <body>
     <header>
-        <fieldset>
-    <h1>
-        Register your account
-    </h1>
-    </fieldset>
+        <h1>Register Your Account</h1>
     </header>
     <main>
-        <h3>if you want to register, email us at <a href="mailto:auraconnect025@gmail.com">auraconnect025@gmail.com</a> 
-            <br> or talk to our Manager--> +91, 97086 27411</h3>
+        <h3 class="contact-info">If you want to register, email us at 
+            <a href="mailto:auraconnect025@gmail.com">auraconnect025@gmail.com</a> 
+            <br> or talk to our Manager: +91 97086 27411</h3>
     </main>
-    <DIV><a href="home.html">Go Back to Home</a></DIV>
+    <div style="text-align: center; margin-top: 20px;">
+        <a href="home.html">Go Back to Home</a>
+    </div>
     <footer>
-        <h2><p>&copy; 2025 A.U.R.A. All Rights Reserved.</p></h2>
-        
+        <p>&copy; 2025 A.U.R.A. All Rights Reserved.</p>
     </footer>
-    
 </body>
 </html>

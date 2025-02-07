@@ -3,236 +3,141 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>A.U.R.A. connect</title>
-
-  <link rel="icon"
-  href="c:\Users\aaron\OneDrive\Pictures\IMG_20250108_104237.jpg" type="image/x-icon">
+  <title>A.U.R.A. Connect</title>
+  <link rel="icon" href="./AURA-icon.png" type="image/x-icon">
   <style>
-    html{
-        background-image: "c:\Users\aaron\OneDrive\Pictures\IMG_20250108_104237.jpg" ;
-    }
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
+    
     body {
-      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+      font-family: 'Orbitron', sans-serif;
       margin: 0;
       padding: 0;
-      background-image: url("./AURA.jpg");
+      background-image: url("./cyberpunk-bg.jpg");
       background-size: cover;
       background-repeat: no-repeat;
       background-position: center;
-      background-color: gray;
-      color: #333;
+      color: #0ff;
+      text-shadow: 0 0 10px #0ff;
     }
-    header {
-      background-color: #0065fd;
-      color: white;
-      text-align: center;
+    header, footer {
+      background: rgba(0, 0, 0, 0.8);
       padding: 20px;
-      background: transparent;
-      backdrop-filter: blur(10px);
-      border: 1px solid gray;
+      text-align: center;
+      border-bottom: 3px solid #0ff;
     }
     section {
       padding: 20px;
-      margin: 100px auto;
+      margin: 50px auto;
       width: 80%;
       max-width: 800px;
-      background: white;
-      border-radius: 5px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-      background: transparent;
-      backdrop-filter: blur(10px);
-      border: 1px solid gray;
-      color: #ffff;
-      
-    }
-    footer {
+      background: rgba(0, 0, 0, 0.7);
+      border-radius: 10px;
+      box-shadow: 0 0 20px #0ff;
       text-align: center;
-      background-color: #4c74af;
-      color: white;
-      padding: 10px;
-      position: relative;
+    }
+    .hover-section:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px #ff0;
+    }
+    button {
       background: transparent;
-      backdrop-filter: blur(10px);
-      border: 1px solid gray;
-    }
-    h1, h2 {
-      margin-top: 0;
-    }
-    a{
-            color: #ffff;
-        }
-    button {
-      padding: 10px 15px;
-      font-size: 14px;
-      background-color: #4c74af;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-    button:hover {
-      background-color: #4c74af;
-    }
-    button {
-      background-color: var(--btn-color);
-      color: white;
+      border: 2px solid #0ff;
       padding: 10px 20px;
-      font-size: 18px;
-      border: none;
-      border-radius: 1em;
+      font-size: 16px;
+      color: #0ff;
       cursor: pointer;
-      border-color: yellowgreen;
-      border-width: 10px;
-      lighting-color: yellowgreen;
-      text-align: justify;
-    }
-    button{
-      --glow-color: rgb(123, 121, 245);
-      --glow-spread-color: rgba(123, 180, 255, 0.781);
-      --enhanced-glow-color: rgb(206, 229, 255);
-      --btn-color: rgb(0, 110, 255);
-      border: 0.25em solid var(--glow-color);
-      padding: 15px;
-      color: var(--glow-color);
-      font-weight: 1em 3em;
-      outline: none;
-      box-shadow: 0 0  1em 0.25 var(--glow-color),
-        0 0 4em 1em var(--glow-spread-color),
-        inset 0 0 0.75em 0.25 var(--glow-color);
-      text-shadow: 0 0 0.5em var(--glow-color);
-      position: relative;
-      transition: all 0.3s;
-      
-    }
-    button-after {
-      pointer-events: none;
-      content: "";
-      position: absolute;
-      top: 120%;
-      left: 0;
-      height: 100%;
-      width: 100%;
-      background-color: var(--enhanced-glow-color);
-      filter: blur(2em);
-      opacity: 0.7;
-      transform: perspective(1.5em) rotateX('35deg') scale(1, 0.6);
+      text-shadow: 0 0 5px #0ff;
+      transition: all 0.3s ease;
     }
     button:hover {
-      background-color: var(--glow-color);
-      box-shadow: 0 0 1em 0.25em var(--glow-color),
-        0 0 4em 2em var(--glow-spread-color),
-        inset 0 0 0.75em 0.25 var(--glow-color);
-
-
-    }
-    button:active{
-      box-shadow: 0 0 0.6em 0.25em var(--glow-color),
-         0 0 2.5em 2em var(--glow-color),
-         inset 0 0 0 .5em 0.25em var(--glow-color)
-
+      color: #ff0;
+      border-color: #ff0;
+      text-shadow: 0 0 10px #ff0;
     }
     a {
-      color: #4c74af;
+      color: #0ff;
       text-decoration: none;
+      transition: color 0.3s;
     }
     a:hover {
-      text-decoration: underline;
-
+      color: #ff0;
+      text-shadow: 0 0 10px #ff0;
     }
   </style>
 </head>
 <body>
 
-  <!-- Header -->
   <header>
     <h1>Welcome to A.U.R.A.</h1>
     <p>All Rounders United Rising Association</p>
   </header>
 
-  <!-- About Us Section -->
-  <section id="about-us">
+  <section id="about-us" class="hover-section">
     <h2>About Us</h2>
     <p>A.U.R.A. is a community-driven organization aiming to empower individuals by fostering creativity, collaboration, and innovation.</p>
   </section>
 
-  <!-- Our Projects Section -->
-  <section id="our-projects">
+  <section id="our-projects" class="hover-section">
     <h2>Our Projects</h2>
-    <p>We have worked on several initiatives, including environmental sustainability campaigns, tech innovation workshops, and community development programs.</p>
+    <p>We work on tech innovations, community development, and futuristic projects.</p>
   </section>
 
-  <!--Leaderboard section-->
-  <section id="Leaderboard">
+  <section id="Leaderboard" class="hover-section">
     <h2>Leaderboard</h2>
-    <p>Rankings will be decided on the basis of how the members work on</p>
-    <button onclick="location.href='leaderboard.html'"> View rankings</button>
+    <p>Rankings are based on members' contributions.</p>
+    <button onclick="location.href='leaderboard.html'">View Rankings</button>
   </section>
 
-  <!--Events section-->
-  <section id="Upcoming Events">
+  <section id="Upcoming-Events" class="hover-section">
     <h2>Upcoming Events</h2>
-    <p>Get a view of past and upcoming events in A.U.R.A</p>
-    <button onclick="location.href='events.html'">
-      Veiw events
-    </button>
+    <p>Stay updated on our upcoming events.</p>
+    <button onclick="location.href='events.html'">View Events</button>
   </section>
 
-  <!--Gallery section-->
-  <section id="Events gallery">
+  <section id="Gallery" class="hover-section">
     <h2>Gallery</h2>
-    <p>We've Captured all the moments we made together.</p>
+    <p>Captured moments from our journey.</p>
     <button onclick="location.href='gallery.html'">View Gallery</button>
   </section>
-  
 
-  <!--Files download Section-->
-  <section id="Download and upload">
-    <h2>Download files</h2>
-    <p>Download all certificates,liscences and AURA documents here</p>
+  <section id="Downloads" class="hover-section">
+    <h2>Downloads</h2>
+    <p>Get access to AURA documents, certificates, and licenses.</p>
     <button onclick="location.href='download.html'">Download Files</button>
   </section>
 
-  <!-- Express Your Ideas and Talents Section -->
-  <section id="express">
-    <h2>Express Your Ideas and Talents</h2>
-    <p>We encourage everyone to showcase their unique ideas and talents. Click the button below to share your creativity with us.</p>
+  <section id="Express" class="hover-section">
+    <h2>Express Yourself</h2>
+    <p>Showcase your talents and ideas.</p>
     <button onclick="location.href='express.html'">Express Yourself</button>
   </section>
 
-  <!--registeration section-->
-  <section id="registeration">
+  <section id="Registration" class="hover-section">
     <h2>Register</h2>
-    <p>If you can't meet our CEO,vice Ceo or Manager, you can manually contact with them to register</p>
+    <p>Connect with our leadership team or register online.</p>
     <button onclick="location.href='register.html'">Register</button>
   </section>
-  <!--high post section-->
-  <section id="programmer post section">
-    <h2>Programmers required</h2>
-    <p>We are looking for Programmers to edit and make our website look fantastic</p>
-    <button onclick="location.href='programmer.html'">Enroll now
-    </button>
+
+  <section id="Programmers" class="hover-section">
+    <h2>Programmers Required</h2>
+    <p>Join us to enhance our website.</p>
+    <button onclick="location.href='programmer.html'">Enroll Now</button>
   </section>
 
-  <!-- Contact Us Section -->
-  <section id="contact-us">
+  <section id="Contact" class="hover-section">
     <h2>Contact Us</h2>
-    <p>If you'd like to reach out to A.U.R.A., email us at <a href="mailto:auraconnect025@gmail.com">auraconnect025@gmail.com</a>.</p>
+    <p>Email: <a href="mailto:auraconnect025@gmail.com">auraconnect025@gmail.com</a></p>
   </section>
 
-  <!-- Channel Section-->
-   <section id="Youtube Channel">
-    <h2>Youtube Updates</h2>
-    <p>We also have a YouTube Channel, Click to support</p>
-    <a href="https://www.youtube.com/@auraofficial-s69" target="_blank"></a>
-    <button>Subscribe</button>
-   </section>
-  <div>
-    <a href="index.html">Lock the Website</a>
-  </div>
+  <section id="YouTube" class="hover-section">
+    <h2>Follow Us on YouTube</h2>
+    <p>Support our content and stay updated.</p>
+    <a href="https://www.youtube.com/@auraofficial-s69" target="_blank">
+      <button>Subscribe</button>
+    </a>
+  </section>
 
-  <!-- Footer -->
   <footer>
-    
     <p>&copy; 2025 A.U.R.A. All Rights Reserved.</p>
   </footer>
 

@@ -5,98 +5,62 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>A.U.R.A. Login</title>
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+    
     body {
-      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+      font-family: 'Orbitron', sans-serif;
       text-align: center;
       margin: 0;
       padding: 0;
-      background-image: url("./bg.jpg");
       background-size: cover;
-      background-repeat: no-repeat;
-      background-position: center;
-      background-color: gray;
-      background: transparent;
-      backdrop-filter: blur(10px);
-      border: 1px solid gray;
+      background: rgba(0, 0, 0, 0.8);
+      color: #0ff;
     }
     .login-container {
       max-width: 400px;
       margin: 100px auto;
       padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-      background: transparent;
-      backdrop-filter: blur(10px);
-      height: 230px;
-      width: 450px;
-      border: 1px solid gray;
-      align-items: center;
+      border-radius: 10px;
+      background: rgba(0, 0, 0, 0.8);
+      box-shadow: 0 0 20px #0ff;
+      border: 2px solid #0ff;
+    }
+    h1 {
+      font-size: 24px;
+      text-transform: uppercase;
+      text-shadow: 0 0 10px #0ff;
+    }
+    p {
+      font-size: 16px;
     }
     input[type="password"] {
       width: 100%;
-      padding: 10px;
-      font-size: 16px;
-      margin-bottom: 20px;
+      padding: 12px;
+      font-size: 18px;
+      background: black;
+      color: #0ff;
+      border: 2px solid #0ff;
       border-radius: 5px;
-      border: 1px solid #ccc;
+      text-align: center;
     }
     button {
-      background-color: var(--btn-color);
-      color: white;
-      padding: 10px 20px;
-      font-size: 18px;
-      border: none;
-      border-radius: 1em;
-      cursor: pointer;
-      border-color: yellowgreen;
-      border-width: 10px;
-      lighting-color: yellowgreen;
-      text-align: justify;
-    }
-    button{
-      --glow-color: rgb(217, 176, 255);
-      --glow-spread-color: rgba(191, 123, 255, 0.781);
-      --enhanced-glow-color: rgb(231, 206, 255);
-      --btn-color: rgb(100, 61, 136);
-      border: 0.25em solid var(--glow-color);
-      padding: 15px;
-      color: var(--glow-color);
-      font-weight: 1em 3em;
-      outline: none;
-      box-shadow: 0 0  1em 0.25 var(--glow-color),
-        0 0 4em 1em var(--glow-spread-color),
-        inset 0 0 0.75em 0.25 var(--glow-color);
-      text-shadow: 0 0 0.5em var(--glow-color);
-      position: relative;
-      transition: all 0.3s;
-      
-    }
-    button-after {
-      pointer-events: none;
-      content: "";
-      position: absolute;
-      top: 120%;
-      left: 0;
-      height: 100%;
       width: 100%;
-      background-color: var(--glow-spread-color);
-      filter: blur(2em);
-      opacity: 0.7;
-      transform: perspective(1.5em) rotateX('35deg') scale(1, 0.6);
+      padding: 12px;
+      font-size: 18px;
+      color: #000;
+      background: #0ff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: 0.3s;
+      font-weight: bold;
+      text-transform: uppercase;
+      box-shadow: 0 0 10px #0ff, 0 0 40px #00f;
     }
     button:hover {
-      background-color: var(--glow-color);
-      box-shadow: 0 0 1em 0.25em var(--glow-color),
-        0 0 4em 2em var(--glow-spread-color),
-        inset 0 0 0.75em 0.25 var(--glow-color);
-
-
-    }
-    button:active{
-      box-shadow: 0 0 0.6em 0.25em var(--glow-color),
-         0 0 2.5em 2em var(--glow-spread-color),
-         inset 0 0 0 .5em 0.25em var(--glow-color)
-
+      background: #00f;
+      color: #0ff;
+      box-shadow: 0 0 15px #00f, 0 0 50px #0ff;
     }
     .error-message {
       color: red;
@@ -107,8 +71,8 @@
 <body>
 
   <div class="login-container">
-    <h1>A.U.R.A. Login</h1>
-    <p>Enter the password to access the website</p>
+    <h1>A.U.R.A. Access</h1>
+    <p>Enter the password to continue</p>
     <input type="password" id="password" placeholder="Enter Password" required>
     <button onclick="validatePassword()">Login</button>
     <p id="error-message" class="error-message"></p>
@@ -117,14 +81,12 @@
   <script>
     function validatePassword() {
       const password = document.getElementById("password").value;
-      const correctPassword = "AURA2025"; // Replace with your desired password
-
+      const correctPassword = "AURA2025";
+      
       if (password === correctPassword) {
-        // Redirect to the main website
         window.location.href = "home.html";
       } else {
-        // Show an error message
-        document.getElementById("error-message").textContent = "Incorrect password. Please try again.";
+        document.getElementById("error-message").textContent = "Incorrect password. Try again.";
       }
     }
   </script>

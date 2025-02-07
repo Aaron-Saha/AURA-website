@@ -3,121 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Enroll for programming</title>
+    <title>A.U.R.A. Leaderboard</title>
+    <link rel="icon" href="./AURA-icon.png" type="image/x-icon">
     <style>
-        body{
-            align-items: center;
-            text-align: center;
-            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-            background-image: url("./AURA.jpg");
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-position: center;
-      background-color: gray;
-    }
-        h1{
-            background-color: #0066cc;
-            color: white;
-            padding: 15px 0;
-            text-align: center;
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
+        
+        body {
+            font-family: 'Orbitron', sans-serif;
             margin: 0;
+            padding: 0;
+            background-image: url("./cyberpunk-bg.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            color: #0ff;
+            text-shadow: 0 0 10px #0ff;
+        }
+        header, footer {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            text-align: center;
+            border-bottom: 3px solid #0ff;
+        }
+        section {
+            padding: 20px;
+            margin: 50px auto;
+            width: 80%;
+            max-width: 800px;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+            box-shadow: 0 0 20px #0ff;
+            text-align: center;
+        }
+        a {
+            color: #0ff;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        a:hover {
+            color: #ff0;
+            text-shadow: 0 0 10px #ff0;
+        }
+        .glow-text {
+            font-size: 24px;
+            font-weight: bold;
+            color: #ff0;
+            text-shadow: 0 0 15px #ff0;
+        }
+        button {
             background: transparent;
-      backdrop-filter: blur(10px);
-      border: 1px solid gray;
+            border: 2px solid #0ff;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #0ff;
+            cursor: pointer;
+            text-shadow: 0 0 5px #0ff;
+            transition: all 0.3s ease;
         }
-        a{
-            color: #ffff;
+        button:hover {
+            color: #ff0;
+            border-color: #ff0;
+            text-shadow: 0 0 10px #ff0;
         }
-            
-        button {
-      padding: 10px 15px;
-      font-size: 14px;
-      background-color: #0066cc;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-    button:hover {
-      background-color: #0066cc
-        }
-        button {
-      background-color: var(--btn-color);
-      color: white;
-      padding: 10px 20px;
-      font-size: 18px;
-      border: none;
-      border-radius: 1em;
-      cursor: pointer;
-      border-color: yellowgreen;
-      border-width: 10px;
-      lighting-color: yellowgreen;
-      text-align: justify;
-    }
-    button{
-      --glow-color: rgb(217, 176, 255);
-      --glow-spread-color: rgba(191, 123, 255, 0.781);
-      --enhanced-glow-color: rgb(231, 206, 255);
-      --btn-color: rgb(100, 61, 136);
-      border: 0.25em solid var(--glow-color);
-      padding: 15px;
-      color: var(--glow-color);
-      font-weight: 1em 3em;
-      outline: none;
-      box-shadow: 0 0  1em 0.25 var(--glow-color),
-        0 0 4em 1em var(--glow-spread-color),
-        inset 0 0 0.75em 0.25 var(--glow-color);
-      text-shadow: 0 0 0.5em var(--glow-color);
-      position: relative;
-      transition: all 0.3s;
-      
-    }
-    button-after {
-      pointer-events: none;
-      content: "";
-      position: absolute;
-      top: 120%;
-      left: 0;
-      height: 100%;
-      width: 100%;
-      background-color: var(--glow-spread-color);
-      filter: blur(2em);
-      opacity: 0.7;
-      transform: perspective(1.5em) rotateX('35deg') scale(1, 0.6);
-    }
-    button:hover {
-      background-color: var(--glow-color);
-      box-shadow: 0 0 1em 0.25em var(--glow-color),
-        0 0 4em 2em var(--glow-spread-color),
-        inset 0 0 0.75em 0.25 var(--glow-color);
-
-
-    }
-    button:active{
-      box-shadow: 0 0 0.6em 0.25em var(--glow-color),
-         0 0 2.5em 2em var(--glow-spread-color),
-         inset 0 0 0 .5em 0.25em var(--glow-color)
-
-    }    
     </style>
 </head>
 <body>
-    <header><h1>
-        Enroll for programming 
-    </h1></header>
-    <div>
-        <form action="mailto:auraconnect025@gmail.com"
-        method="POST" enctype="text/plain">
-    <label for="programmer Details">(only 2 programmers required)
-        <br><br>Share your programming skills and expirience:</label><br><br>
-<textarea name="Programmer Details" id="ProgrammerDetails"
-rows="10"
-cols="50" placeholder="type here..."></textarea><br><br>
-<button type="submit">Submit</button></form>
-    </div>
-    <br><br><br><br><br><br><br><br><br><br><br><br>
+    <header>
+        <h1>A.U.R.A. Leaderboard</h1>
+        <p class="glow-text">Rankings not decided yet.</p>
+    </header>
+    <section>
+        <p>Leaderboard will be updated soon. Stay tuned!</p>
+    </section>
     <footer>
-        <a href="home.html">Go back home</a>
+        <p>&copy; 2025 A.U.R.A. All Rights Reserved.</p>
+        <a href="home.html"><button>Go Back to Home</button></a>
     </footer>
 </body>
 </html>

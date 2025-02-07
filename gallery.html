@@ -3,110 +3,90 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Galley - A.U.R.A</title>
+    <title>Gallery - A.U.R.A</title>
     <style>
-        head{
-            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        body {
+            font-family: 'Orbitron', sans-serif;
+            background-image: url("./bg.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            color: #0ff;
+            text-shadow: 0 0 10px #0ff;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f9;
-            color: #333;
-            text-align: center;
-
         }
-        h1{
-            background-color: #4c74af;
-            color: white;
-            padding: 15px 0;
-            margin: 0;
+        header, footer {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 20px;
             text-align: center;
-
+            border-bottom: 3px solid #0ff;
         }
-        .gallery{
+        main {
+            padding: 20px;
+            margin: 20px auto;
+            width: 80%;
+            max-width: 1000px;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+            box-shadow: 0 0 20px #0ff;
+            text-align: center;
+        }
+        .gallery {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 15px;
             padding: 20px;
-
         }
-        .gallery img{
+        .gallery img {
             width: 100%;
             height: auto;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            box-shadow: 0 0 10px #0ff;
+            transition: transform 0.3s, box-shadow 0.3s;
         }
-        body{
-            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-            background-image: url("./bg.jpg");
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-position: center;
-      background-color: gray;
+        .gallery img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px #ff0;
         }
-        DIV{
-            align-items: center;
-            align-self: center;
-            width: 300px;
-            height: 300px;
-
+        a {
+            color: #0ff;
+            text-decoration: none;
+            transition: 0.3s;
         }
-        a{
-            color: #ffff;
+        a:hover {
+            color: #ff0;
+            text-shadow: 0 0 10px #ff0;
         }
-        img{
-            align-items: center ;
-            justify-content: center;
+        fieldset {
+            border: 2px solid #0ff;
+            border-radius: 10px;
+            padding: 15px;
+            background: rgba(0, 0, 0, 0.8);
+            box-shadow: 0 0 10px #0ff;
         }
-        fieldset{
-            width: 400px;
-        }
-        
     </style>
 </head>
 <body>
-    <h1>
-        Gallery
-    </h1>
-    <br>
-    <br><br>
-    
+    <header>
+        <h1>Gallery</h1>
+    </header>
+    <main>
         <div class="gallery">
             <fieldset>
-                <img src="IMG_20250108_104237.jpg" alt="The legacy started...." ><strong><p>The legacy started...</p></strong>
-                <p>It all began with the Ideas of our founders-  <br>
-                    <strong>Aaron Saha</strong>
-                    <br>
-                    <strong>Ayman Akhtar</strong>
-                    <br>
+                <img src="IMG_20250108_104237.jpg" alt="The legacy started....">
+                <strong><p>The legacy started...</p></strong>
+                <p>It all began with the Ideas of our founders:<br>
+                    <strong>Aaron Saha</strong><br>
+                    <strong>Ayman Akhtar</strong><br>
                     <strong>Aditya Kumar</strong>
                 </p>
-            <br> 
             </fieldset>
-    
-            <!--add more images-->
-            
         </div>
-    
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-
-    
+    </main>
     <footer>
         <p>&copy; 2025 A.U.R.A. All Rights Reserved.</p>
         <a href="home.html">Go Back to Home</a>
-      </footer>
+    </footer>
 </body>
 </html>

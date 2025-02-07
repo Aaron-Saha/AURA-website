@@ -4,75 +4,67 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Events - A.U.R.A</title>
-    <STYLE>
-        body{
-            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f9;
-            color: #ffffff;
+    <style>
+        body {
+            font-family: 'Orbitron', sans-serif;
             background-image: url("./AURA.jpg");
             background-size: cover;
             background-repeat: no-repeat;
             background-position: center;
-            background-color: gray;
-            background: transparent;
-      backdrop-filter: blur(10px);
-      border: 1px solid gray;
-      
-        }
-        a{
-            color: #ffff;
-        }
-        h1{
-            background-color: #0066cc;
-            color: white;
-            padding: 15px 0;
-            text-align: center;
+            color: #0ff;
+            text-shadow: 0 0 10px #0ff;
             margin: 0;
-            background: transparent;
-      backdrop-filter: blur(10px);
-      border: 1px solid gray;
+            padding: 0;
         }
-        .event{
+        header, footer {
+            background: rgba(0, 0, 0, 0.8);
             padding: 20px;
-            margin: 15px auto;
-             
-            border-radius: 5px;
-            max-width: 800px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            border-bottom: 3px solid #0ff;
         }
-        h2{
-            color:#ffff
+        .event {
+            padding: 20px;
+            margin: 20px auto;
+            width: 80%;
+            max-width: 600px;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+            box-shadow: 0 0 20px #0ff;
+            text-align: center;
         }
-        div{
-            background: transparent;
-      backdrop-filter: blur(10px);
-      border: 1px solid gray;
+        h1, h2 {
+            color: #0ff;
         }
-    </STYLE>
+        a {
+            color: #0ff;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+        a:hover {
+            color: #ff0;
+            text-shadow: 0 0 10px #ff0;
+        }
+    </style>
 </head>
 <body>
-    <h1>Upcominge events</h1>
+    <header>
+        <h1>Upcoming Events</h1>
+    </header>
     <div class="event">
-        <h2>Member's engagement event</h2>
-        <p><strong>Date:</strong>1 february, 2025</p>
-        <p><strong>Description</strong>: a special meeting for A.U.R.A members for expressing their portfolio,ideas, uniting and introducing about Yourself</p>
-        <p><STRONG>Duration:</STRONG> 25 Minutes</p>
+        <h2>Member's Engagement Event</h2>
+        <p><strong>Date:</strong> February 1, 2025</p>
+        <p><strong>Description:</strong> A special meeting for A.U.R.A members to showcase their portfolio, share ideas, unite, and introduce themselves.</p>
+        <p><strong>Duration:</strong> 25 Minutes</p>
     </div>
-    <h1>
-        Past events
-    </h1>
-    <ul>
-        <li>
-            <h2>
-                No previous events
-            </h2>
-        </li>
-    </ul>
+    <header>
+        <h1>Past Events</h1>
+    </header>
+    <div class="event">
+        <h2>No previous events</h2>
+    </div>
     <footer>
         <p>&copy; 2025 A.U.R.A. All Rights Reserved.</p>
         <a href="home.html">Go Back to Home</a>
-      </footer>
+    </footer>
 </body>
 </html>

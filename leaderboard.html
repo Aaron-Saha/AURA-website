@@ -3,44 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Leaderboard</title>
+    <title>A.U.R.A. Leaderboard</title>
+    <link rel="icon" href="./AURA-icon.png" type="image/x-icon">
     <style>
-    body {
-        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-        background-color: #f4f4f4;
-        color: #ffff;
-        background-image: url("./AURA.jpg");
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-position: center;
-      background-color: gray;
-
-    }
-    a{
-            color: #ffff;
-        }   
-    header {
-      background-color: #4c74af;
-      color: white;
-      text-align: center;
-      padding: 20px;
-      background: transparent;
-      backdrop-filter: blur(10px);
-      border: 1px solid gray;}
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
+        
+        body {
+            font-family: 'Orbitron', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url("./cyberpunk-bg.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            color: #0ff;
+            text-shadow: 0 0 10px #0ff;
+        }
+        header, footer {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            text-align: center;
+            border-bottom: 3px solid #0ff;
+        }
+        section {
+            padding: 20px;
+            margin: 50px auto;
+            width: 80%;
+            max-width: 800px;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+            box-shadow: 0 0 20px #0ff;
+            text-align: center;
+        }
+        a {
+            color: #0ff;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        a:hover {
+            color: #ff0;
+            text-shadow: 0 0 10px #ff0;
+        }
+        .glow-text {
+            font-size: 24px;
+            font-weight: bold;
+            color: #ff0;
+            text-shadow: 0 0 15px #ff0;
+        }
+        button {
+            background: transparent;
+            border: 2px solid #0ff;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #0ff;
+            cursor: pointer;
+            text-shadow: 0 0 5px #0ff;
+            transition: all 0.3s ease;
+        }
+        button:hover {
+            color: #ff0;
+            border-color: #ff0;
+            text-shadow: 0 0 10px #ff0;
+        }
     </style>
 </head>
 <body>
     <header>
-        <h1>Rankings not decided yet.</h1>
+        <h1>A.U.R.A. Leaderboard</h1>
+        <p class="glow-text">Rankings not decided yet.</p>
     </header>
-    <br><br><br><br><br><br><br><br><br>
-    <br><br><br><br><br><br><br><br><br><br><BR><BR><BR></BR></BR></BR>
-    <!-- Footer -->
-  <footer>
-    <p>&copy; 2025 A.U.R.A. All Rights Reserved.</p>
-    <a href="home.html">Go Back to Home</a>
-  </footer>
+    <section>
+        <p>Leaderboard will be updated soon. Stay tuned!</p>
+    </section>
+    <footer>
+        <p>&copy; 2025 A.U.R.A. All Rights Reserved.</p>
+        <a href="home.html"><button>Go Back to Home</button></a>
+    </footer>
 </body>
 </html>
