@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Jarvis AI Assistant - AURA Edition</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      font-family: 'Orbitron', sans-serif;
+      background: linear-gradient(-45deg, #0ff, #00f, #0ff, #00f);
+      background-size: 400% 400%;
+      animation: gradientAnimation 10s ease infinite;
+      color: #fff;
+    }
+
+    @keyframes gradientAnimation {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      max-width: 700px;
+      margin: auto;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    h1 {
+      text-align: center;
+      margin: 10px 0;
+      color: #00ffff;
+    }
+
+    #conversation-log {
+      flex: 1;
+      overflow-y: auto;
+      padding: 10px;
+      border: 1px solid #555;
+      border-radius: 8px;
+      background-color: rgba(0, 0, 0, 0.6);
+      margin-bottom: 10px;
+    }
+
+    .input-area {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+
+    #user-input {
+      flex: 1;
+      padding: 10px;
+      font-size: 16px;
+      border: none;
+      border-radius: 5px;
+    }
+
+    #send-btn, #start-voice-btn {
+      padding: 10px 15px;
+      font-size: 16px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    #send-btn {
+      background-color: #4CAF50;
+      color: white;
+    }
+
+    #start-voice-btn {
+      background-color: #03A9F4;
+      color: white;
+    }
+
+    #send-btn:hover {
+      background-color: #45a049;
+    }
+
+    #start-voice-btn:hover {
+      background-color: #039BE5;
+    }
+
+    .typing-animation {
+      display: inline-block;
+      overflow: hidden;
+      border-right: 2px solid #00ffff;
+      white-space: nowrap;
+      animation: typing 2s steps(20, end) infinite, blink 0.7s step-end infinite alternate;
+    }
+
+    @keyframes typing {
+      from { width: 0; }
+      to { width: 100%; }
+    }
+
+    @keyframes blink {
+      from, to { border-color: transparent; }
+      50% { border-color: #00ffff; }
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    footer button {
+      margin-top: 5px;
+      padding: 6px 12px;
+      font-family: 'Orbitron', sans-serif;
+      background-color: #00ffff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    footer button:hover {
+      background-color: #00cccc;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Ask anything... to Jarvis</h1>
+    <div id="conversation-log"></div>
+    <div class="input-area">
+      <input id="user-input" type="text" placeholder="Type your question...">
+      <button id="send-btn">Send</button>
+      <button id="start-voice-btn">Speak</button>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 A.U.R.A. All Rights Reserved.</p>
+    <a href="home.html"><button>Go Back to Home</button></a>
+  </footer>
+
+  <script>
+    const userInput = document.getElementById('user-input');
+    const sendBtn = document.getElementById('send-btn');
+    const conversationLog = document.getElementById('conversation-log');
+    const startVoiceBtn = document.getElementById('start-voice-btn');
+
+    let recognition;
+    let synth = window.speechSynthesis;
+
+    if ('webkitSpeechRecognition' in window) {
+      recognition = new webkitSpeechRecognition();
+      recognition.continuous = false;
+      recognition.interimResults = false;
+
+      recognition.onresult = (event) => {
+        const transcript = event.results[0][0].transcript;
+        userInput.value = transcript;
+        sendBtn.click();
+      };
+
+      recognition.onerror = (event) => {
+        alert('Speech recognition error: ' + event.error);
+      };
+    }
+
+    startVoiceBtn.addEventListener('click', () => {
+      if (recognition) {
+        recognition.start();
+      } else {
+        alert("Voice recognition not supported in this browser.");
+      }
+    });
+
+    sendBtn.addEventListener('click', async () => {
+      const userQuestion = userInput.value.trim();
+      if (!userQuestion) return;
+
+      appendMessage('You', userQuestion);
+      appendThinkingMessage();
+      scrollToBottom();
+
+      try {
+        const response = await getAIResponse(userQuestion);
+        updateLastJarvisMessage(response);
+        speakResponse(response);
+      } catch (error) {
+        updateLastJarvisMessage("Sorry, I'm unable to process that right now.");
+        console.error(error);
+      }
+
+      userInput.value = '';
+      scrollToBottom();
+    });
+
+    function appendMessage(sender, message) {
+      const p = document.createElement('p');
+      p.innerHTML = `<strong>${sender}:</strong> ${message}`;
+      conversationLog.appendChild(p);
+    }
+
+    function appendThinkingMessage() {
+      const p = document.createElement('p');
+      p.innerHTML = `<strong>Jarvis:</strong> <span class="typing-animation">Thinking...</span>`;
+      conversationLog.appendChild(p);
+    }
+
+    function updateLastJarvisMessage(newText) {
+      const messages = conversationLog.querySelectorAll('p');
+      for (let i = messages.length - 1; i >= 0; i--) {
+        if (messages[i].innerHTML.includes('<strong>Jarvis:</strong>')) {
+          messages[i].innerHTML = `<strong>Jarvis:</strong> ${newText}`;
+          break;
+        }
+      }
+    }
+
+    function scrollToBottom() {
+      conversationLog.scrollTop = conversationLog.scrollHeight;
+    }
+
+    function speakResponse(text) {
+      if (synth) {
+        const utter = new SpeechSynthesisUtterance(text);
+        const voices = synth.getVoices();
+        const jarvisVoice = voices.find(v => v.name.includes('Google UK English Male')) || voices[0];
+        utter.voice = jarvisVoice;
+        synth.speak(utter);
+      }
+    }
+
+    async function getAIResponse(question) {
+      const apiEndpoint = 'https://openrouter.ai/api/v1/chat/completions';
+      const apiKey = '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';
+
+      const headers = {
+        'Authorization': `Bearer ${apiKey}`,
+        'Content-Type': 'application/json'
+      };
+
+      const body = JSON.stringify({
+        model: "meta-llama/llama-3-8b-instruct",
+        messages: [
+          {
+            role: "system",
+            content: `You are Jarvis, a friendly futuristic AI assistant developed by Aaron. 
+You are highly intelligent, helpful, and witty.
+You know these facts:
+- AURA stands for All Rounder's United Rising Association.
+- AURA started on 1st January 2025.
+- The CEO is Aaron Saha.
+- The vice CEO is Ayman.
+- The manager is Aarav.
+- AURA unites multi-talented people and encourages all-round growth.
+If anyone asks about AURA, always mention these facts clearly.`
+          },
+          {
+            role: "user",
+            content: question
+          }
+        ],
+        temperature: 0.7
+      });
+
+      try {
+        const response = await fetch(apiEndpoint, { method: 'POST', headers, body });
+        const data = await response.json();
+        return data.choices[0].message.content.trim();
+      } catch (error) {
+        console.error("API error:", error);
+        return "Sorry, I'm unable to process that right now.";
+      }
+    }
+  </script>
+</body>
+</html>
